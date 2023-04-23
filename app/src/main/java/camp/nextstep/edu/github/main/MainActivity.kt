@@ -1,14 +1,14 @@
 package camp.nextstep.edu.github.main
 
 import android.os.Bundle
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import camp.nextstep.edu.github.MyApplication
 import camp.nextstep.edu.github.RepositoriesSearchAdapter
-import camp.nextstep.edu.github.data.Injector
+import camp.nextstep.edu.github.common.ViewModelFactory
 import camp.nextstep.edu.github.databinding.ActivityMainBinding
-import camp.nextstep.edu.github.domain.GithubSearchRepository
+import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -17,10 +17,15 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var searchAdapter: RepositoriesSearchAdapter
 
-    private val viewModel: MainViewModel by viewModels {
-        val repository: GithubSearchRepository = Injector.provideGithubSearchRepository()
-        MainViewModelFactory(repository)
-    }
+    @Inject
+    lateinit var viewModelFactory: ViewModelFactory
+
+    private lateinit var viewModel: MainViewModel
+
+    /*   private val viewModel: MainViewModel by viewModels {
+           val repository: GithubSearchRepository = Injector.provideGithubSearchRepository()
+           MainViewModelFactory(repository)
+       }*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         mainComponent = (application as MyApplication).appComponent.mainComponent().create()
@@ -30,6 +35,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.lifecycleOwner = this
+        viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
         binding.vm = viewModel
         setupRecyclerView()
         observerLiveData()

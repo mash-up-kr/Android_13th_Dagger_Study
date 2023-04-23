@@ -4,7 +4,7 @@ import camp.nextstep.edu.github.di.ActivityScope
 import dagger.Subcomponent
 
 @ActivityScope
-@Subcomponent
+@Subcomponent(modules = [ViewModelsModule::class])
 interface MainComponent {
 
     @Subcomponent.Factory
