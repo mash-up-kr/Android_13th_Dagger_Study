@@ -79,4 +79,15 @@ dependencies {
     // Mockk
     testImplementation("io.mockk:mockk:${Version.MOCKK}")
     androidTestImplementation("io.mockk:mockk-android:${Version.MOCKK}")
+
+    implementation("com.google.dagger:dagger:2.44.2")
+    kapt("com.google.dagger:dagger-compiler:2.44.2")
+
+    // Okhttp
+    implementation("com.squareup.okhttp3:okhttp:${Version.OKHTTP}")
+    implementation("com.squareup.okhttp3:logging-interceptor:${Version.OKHTTP}")
+
+    // Retrofit
+    implementation("com.squareup.retrofit2:retrofit:${Version.RETROFIT}")
+    implementation("com.squareup.retrofit2:converter-moshi:${Version.CONVERTER_MOSHI}")
 }
