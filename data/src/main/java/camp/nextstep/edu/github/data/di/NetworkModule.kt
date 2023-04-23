@@ -1,30 +1,34 @@
-package camp.nextstep.edu.github.data.api
+package camp.nextstep.edu.github.data.di
 
-import camp.nextstep.edu.github.data.Constants.BASE_URL
+import camp.nextstep.edu.github.data.Constants
+import dagger.Module
+import dagger.Provides
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import javax.inject.Singleton
 
-internal object RetrofitInstance {
-    private val okHttpClient: OkHttpClient by lazy {
+@Module
+class NetworkModule {
+
+    @Singleton
+    @Provides
+    fun provideOkHttpClient(): OkHttpClient {
         val httpLoggingInterceptor = HttpLoggingInterceptor()
             .setLevel(HttpLoggingInterceptor.Level.BODY)
-        OkHttpClient.Builder()
+        return OkHttpClient.Builder()
             .addInterceptor(httpLoggingInterceptor)
             .build()
     }
 
-    private val retrofit: Retrofit by lazy {
-        Retrofit.Builder()
+    @Singleton
+    @Provides
+    fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
+        return Retrofit.Builder()
             .addConverterFactory(MoshiConverterFactory.create())
             .client(okHttpClient)
-            .baseUrl(BASE_URL)
+            .baseUrl(Constants.BASE_URL)
             .build()
-    }
-
-
-    val api: GitHubSearchApi by lazy {
-        retrofit.create(GitHubSearchApi::class.java)
     }
 }
