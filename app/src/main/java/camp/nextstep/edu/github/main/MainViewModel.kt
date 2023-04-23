@@ -1,4 +1,4 @@
-package camp.nextstep.edu.github
+package camp.nextstep.edu.github.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

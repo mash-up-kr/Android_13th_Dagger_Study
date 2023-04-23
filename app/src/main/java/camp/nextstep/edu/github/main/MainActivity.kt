@@ -1,9 +1,10 @@
-package camp.nextstep.edu.github
+package camp.nextstep.edu.github.main
 
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import camp.nextstep.edu.github.RepositoriesSearchAdapter
 import camp.nextstep.edu.github.data.Injector
 import camp.nextstep.edu.github.databinding.ActivityMainBinding
 import camp.nextstep.edu.github.domain.GithubSearchRepository
