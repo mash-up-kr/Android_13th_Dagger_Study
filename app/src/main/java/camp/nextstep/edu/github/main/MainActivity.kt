@@ -35,7 +35,6 @@ class MainActivity : AppCompatActivity() {
         binding.vm = viewModel
         setupRecyclerView()
         observerLiveData()
-        viewModel.searchRepositories()
     }
 
     private fun setupRecyclerView() {

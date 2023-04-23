@@ -18,7 +18,11 @@ class MainViewModel @Inject constructor(
     val repositories: LiveData<List<Repository>>
         get() = _repositories
 
-    fun searchRepositories() = viewModelScope.launch(Dispatchers.IO) {
+    init{
+        searchRepositories()
+    }
+
+    private fun searchRepositories() = viewModelScope.launch(Dispatchers.IO) {
         val repositories = gitHubSearchRepository.searchGitHubs()
         _repositories.postValue(repositories)
 
