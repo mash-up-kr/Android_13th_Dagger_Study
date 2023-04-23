@@ -83,4 +83,12 @@ dependencies {
     // Dagger2
     implementation("com.google.dagger:dagger:${Version.DAGGER}")
     kapt("com.google.dagger:dagger-compiler:${Version.DAGGER}")
+
+    // Okhttp
+    implementation("com.squareup.okhttp3:okhttp:${Version.OKHTTP}")
+    implementation("com.squareup.okhttp3:logging-interceptor:${Version.OKHTTP}")
+
+    // Retrofit
+    implementation("com.squareup.retrofit2:retrofit:${Version.RETROFIT}")
+    implementation("com.squareup.retrofit2:converter-moshi:${Version.CONVERTER_MOSHI}")
 }
