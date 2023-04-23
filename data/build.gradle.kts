@@ -39,4 +39,8 @@ dependencies {
     //Mock server
     testImplementation("com.squareup.okhttp3:mockwebserver:${Version.MOCK_WEB_SERVER}")
 
+    // Dagger2
+    implementation("com.google.dagger:dagger:${Version.DAGGER}")
+    kapt("com.google.dagger:dagger-compiler:${Version.DAGGER}")
+
 }
