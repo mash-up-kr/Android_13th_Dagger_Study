@@ -79,4 +79,8 @@ dependencies {
     // Mockk
     testImplementation("io.mockk:mockk:${Version.MOCKK}")
     androidTestImplementation("io.mockk:mockk-android:${Version.MOCKK}")
+
+    // Dagger2
+    implementation("com.google.dagger:dagger:${Version.DAGGER}")
+    kapt("com.google.dagger:dagger-compiler:${Version.DAGGER}")
 }
