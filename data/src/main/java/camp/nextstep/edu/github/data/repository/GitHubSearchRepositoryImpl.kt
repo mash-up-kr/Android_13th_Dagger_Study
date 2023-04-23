@@ -5,7 +5,7 @@ import camp.nextstep.edu.github.domain.GithubSearchRepository
 import camp.nextstep.edu.github.domain.model.Repository
 import javax.inject.Inject
 
-internal class GitHubSearchRepositoryImpl @Inject constructor(
+class GitHubSearchRepositoryImpl @Inject constructor(
     private val gitHubSearchService: GitHubSearchService
 ) : GithubSearchRepository {
     override suspend fun searchGitHubs(): List<Repository> {

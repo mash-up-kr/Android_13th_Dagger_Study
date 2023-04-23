@@ -12,7 +12,7 @@ import javax.inject.Singleton
  * @created 2023/04/24
  */
 @Module
-internal interface RepositoryModule {
+interface RepositoryModule {
 
     @Singleton
     @Binds
