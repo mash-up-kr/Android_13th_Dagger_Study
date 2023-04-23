@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
     private val viewModel: MainViewModel by viewModels { viewModelFactory }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        // (application as MainApplication).appComponent.inject(this)
+        (application as MainApplication).appComponent.inject(this)
 
         super.onCreate(savedInstanceState)
 
