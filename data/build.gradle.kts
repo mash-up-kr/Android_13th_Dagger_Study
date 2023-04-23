@@ -28,13 +28,12 @@ dependencies {
     implementation("com.squareup.moshi:moshi:${Version.MOSHI}")
     kapt("com.squareup.moshi:moshi-kotlin-codegen:${Version.MOSHI}")
 
-    // Okhttp
-    implementation("com.squareup.okhttp3:okhttp:${Version.OKHTTP}")
-    implementation("com.squareup.okhttp3:logging-interceptor:${Version.OKHTTP}")
-
     // Coroutine
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${Version.COROUTINE}")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:${Version.COROUTINE_ANDROID}")
+
+    // dagger
+    implementation("com.google.dagger:dagger:${Version.DAGGER}")
 
     //Mock server
     testImplementation("com.squareup.okhttp3:mockwebserver:${Version.MOCK_WEB_SERVER}")
