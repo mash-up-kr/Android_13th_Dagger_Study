@@ -1,7 +1,7 @@
 package camp.nextstep.edu.github.data
 
 import camp.nextstep.edu.github.data.Constants.BASE_URL
-import camp.nextstep.edu.github.data.api.GitHubSearchApi
+import camp.nextstep.edu.github.data.api.GitHubSearchService
 import camp.nextstep.edu.github.data.model.RepositoryEntity
 import com.google.common.truth.Truth.assertThat
 import com.squareup.moshi.Moshi
@@ -16,7 +16,7 @@ import java.io.File
 
 class GitHubSearchApiTest {
     private lateinit var server: MockWebServer
-    private lateinit var api: GitHubSearchApi
+    private lateinit var api: GitHubSearchService
 
     @Before
     fun setUp() {
@@ -27,7 +27,7 @@ class GitHubSearchApiTest {
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .baseUrl(server.url(BASE_URL))
             .build()
-            .create(GitHubSearchApi::class.java)
+            .create(GitHubSearchService::class.java)
     }
 
     @Test
