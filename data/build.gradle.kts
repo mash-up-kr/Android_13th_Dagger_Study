@@ -2,7 +2,6 @@ plugins {
     id("java-library")
     id("org.jetbrains.kotlin.jvm")
     id("kotlin-kapt")
-
 }
 
 java {
@@ -36,7 +35,10 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${Version.COROUTINE}")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:${Version.COROUTINE_ANDROID}")
 
-    //Mock server
+    // Mock server
     testImplementation("com.squareup.okhttp3:mockwebserver:${Version.MOCK_WEB_SERVER}")
 
+    // Dagger
+    implementation("com.google.dagger:dagger:${Version.DAGGER}")
+    kapt("com.google.dagger:dagger-compiler:${Version.DAGGER}")
 }
