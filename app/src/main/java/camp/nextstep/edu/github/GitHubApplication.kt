@@ -11,7 +11,7 @@ import camp.nextstep.edu.github.presentation.PresentationComponent
  */
 class GitHubApplication : Application() {
     val appComponent: AppComponent by lazy {
-        DaggerAppComponent.factory().create(applicationContext)
+        DaggerAppComponent.factory().create()
     }
 
     val presentationComponent: PresentationComponent by lazy {

@@ -1,11 +1,9 @@
 package camp.nextstep.edu.github.di
 
-import android.content.Context
 import camp.nextstep.edu.github.data.di.ApiModule
 import camp.nextstep.edu.github.data.di.NetWorkModule
 import camp.nextstep.edu.github.data.di.RepositoryModule
 import camp.nextstep.edu.github.presentation.PresentationComponent
-import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
 
@@ -19,7 +17,7 @@ interface AppComponent {
 
     @Component.Factory
     interface Factory {
-        fun create(@BindsInstance context: Context): AppComponent
+        fun create(): AppComponent
     }
 
     fun presentationComponent(): PresentationComponent.Factory
