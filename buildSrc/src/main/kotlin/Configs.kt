@@ -11,7 +11,6 @@ object Version {
     const val MATERIAL = "1.5.0"
     const val CONSTRAINT_LAYOUT = "2.1.3"
 
-
     // Testing
     const val JUNIT4 = "4.13.2"
     const val TRUTH = "1.1.3"
@@ -22,11 +21,10 @@ object Version {
     const val ROBOLECTRIC = "4.9"
     const val MOCKK = "1.13.4"
 
-
     // Library
     const val RETROFIT = "2.9.0"
     const val MOSHI = "1.13.0"
-    const val CONVERTER_MOSHI= "2.9.0"
+    const val CONVERTER_MOSHI = "2.9.0"
     const val OKHTTP = "4.9.3"
     const val LIFECYCLE = "2.4.1"
     const val COROUTINE = "1.6.2"
@@ -44,6 +42,5 @@ object Version {
     const val FRAGMENT_KTX = "1.5.5"
     const val HILT_EXTENSION = "1.0.0"
     const val MOCK_WEB_SERVER = "4.10.0"
-
-
+    const val DAGGER = "2.45"
 }

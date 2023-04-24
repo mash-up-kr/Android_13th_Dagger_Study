@@ -24,7 +24,7 @@ android {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                "proguard-rules.pro",
             )
         }
     }
@@ -64,7 +64,7 @@ dependencies {
     testImplementation("org.robolectric:robolectric:${Version.ROBOLECTRIC}")
     testImplementation("androidx.test.espresso:espresso-core:${Version.ESPRESSO_CORE}")
 
-    //Android test
+    // Android test
     androidTestImplementation("junit:junit:${Version.JUNIT4}")
     androidTestImplementation("com.google.truth:truth:${Version.TRUTH}")
     androidTestImplementation("androidx.arch.core:core-testing:${Version.CORE_TESTING}")
@@ -79,4 +79,16 @@ dependencies {
     // Mockk
     testImplementation("io.mockk:mockk:${Version.MOCKK}")
     androidTestImplementation("io.mockk:mockk-android:${Version.MOCKK}")
+
+    // Dagger
+    implementation("com.google.dagger:dagger:${Version.DAGGER}")
+    kapt("com.google.dagger:dagger-compiler:${Version.DAGGER}")
+
+    // Retrofit
+    implementation("com.squareup.retrofit2:retrofit:${Version.RETROFIT}")
+    implementation("com.squareup.retrofit2:converter-moshi:${Version.CONVERTER_MOSHI}")
+
+    // Okhttp
+    implementation("com.squareup.okhttp3:okhttp:${Version.OKHTTP}")
+    implementation("com.squareup.okhttp3:logging-interceptor:${Version.OKHTTP}")
 }
