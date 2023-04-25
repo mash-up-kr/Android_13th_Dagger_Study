@@ -1,4 +1,4 @@
-package camp.nextstep.edu.github
+package camp.nextstep.edu.github.presentation.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -8,9 +8,10 @@ import camp.nextstep.edu.github.domain.GithubSearchRepository
 import camp.nextstep.edu.github.domain.model.Repository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class MainViewModel(
-    private val gitHubSearchRepository: GithubSearchRepository
+class MainViewModel @Inject constructor(
+    private val gitHubSearchRepository: GithubSearchRepository,
 ) : ViewModel() {
     private val _repositories = MutableLiveData<List<Repository>>()
     val repositories: LiveData<List<Repository>>
@@ -19,6 +20,5 @@ class MainViewModel(
     fun searchRepositories() = viewModelScope.launch(Dispatchers.IO) {
         val repositories = gitHubSearchRepository.searchGitHubs()
         _repositories.postValue(repositories)
-
     }
 }

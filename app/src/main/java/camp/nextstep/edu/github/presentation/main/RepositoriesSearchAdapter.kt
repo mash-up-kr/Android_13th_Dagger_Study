@@ -1,5 +1,4 @@
-package camp.nextstep.edu.github
-
+package camp.nextstep.edu.github.presentation.main
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -14,7 +13,7 @@ class RepositoriesSearchAdapter :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepositoryViewHolder {
         return RepositoryViewHolder(
-            ItemRepoBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            ItemRepoBinding.inflate(LayoutInflater.from(parent.context), parent, false),
         )
     }
 
@@ -32,15 +31,12 @@ class RepositoriesSearchAdapter :
             override fun areContentsTheSame(oldItem: Repository, newItem: Repository): Boolean {
                 return oldItem == newItem
             }
-
         }
     }
-
 }
 
-
 class RepositoryViewHolder(
-    private val binding: ItemRepoBinding
+    private val binding: ItemRepoBinding,
 ) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(repository: Repository) {
