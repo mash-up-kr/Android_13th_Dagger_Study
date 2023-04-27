@@ -8,4 +8,4 @@ import dagger.Module
  * @created 2023/04/24
  */
 @Module(subcomponents = [MainComponent::class])
-class AppSubcomponents
+class ActivityModule
