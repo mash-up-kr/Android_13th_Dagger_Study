@@ -12,6 +12,6 @@ import camp.nextstep.edu.github.di.DaggerAppComponent
 class MyApplication : Application() {
 
     val appComponent: AppComponent by lazy {
-        DaggerAppComponent.factory().create(applicationContext)
+        DaggerAppComponent.factory().create()
     }
 }
