@@ -87,9 +87,6 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:${Version.RETROFIT}")
     implementation("com.squareup.retrofit2:converter-moshi:${Version.CONVERTER_MOSHI}")
 
-    // Moshi
-    implementation("com.squareup.moshi:moshi:${Version.MOSHI}")
-    kapt("com.squareup.moshi:moshi-kotlin-codegen:${Version.MOSHI}")
 
     // Okhttp
     implementation("com.squareup.okhttp3:okhttp:${Version.OKHTTP}")
