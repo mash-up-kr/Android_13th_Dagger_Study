@@ -51,7 +51,6 @@ dependencies {
     implementation("com.google.android.material:material:${Version.MATERIAL}")
     implementation("androidx.constraintlayout:constraintlayout:${Version.CONSTRAINT_LAYOUT}")
     implementation("androidx.fragment:fragment-ktx:${Version.FRAGMENT_KTX}")
-    implementation(project(mapOf("path" to ":data")))
 
     // Junit
     testImplementation("junit:junit:${Version.JUNIT4}")
@@ -79,4 +78,18 @@ dependencies {
     // Mockk
     testImplementation("io.mockk:mockk:${Version.MOCKK}")
     androidTestImplementation("io.mockk:mockk-android:${Version.MOCKK}")
+
+    //Dagger
+    implementation("com.google.dagger:dagger:${Version.DAGGER}")
+    kapt("com.google.dagger:dagger-compiler:${Version.DAGGER}")
+
+    // Retrofit
+    implementation("com.squareup.retrofit2:retrofit:${Version.RETROFIT}")
+    implementation("com.squareup.retrofit2:converter-moshi:${Version.CONVERTER_MOSHI}")
+
+
+    // Okhttp
+    implementation("com.squareup.okhttp3:okhttp:${Version.OKHTTP}")
+    implementation("com.squareup.okhttp3:logging-interceptor:${Version.OKHTTP}")
+
 }
