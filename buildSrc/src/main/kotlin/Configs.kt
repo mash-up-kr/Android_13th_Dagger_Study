@@ -44,6 +44,7 @@ object Version {
     const val FRAGMENT_KTX = "1.5.5"
     const val HILT_EXTENSION = "1.0.0"
     const val MOCK_WEB_SERVER = "4.10.0"
+    const val DAGGER = "2.45"
 
 
 }
